@@ -21,7 +21,7 @@ body {
   justify-content: space-between;
 }
 
-input[type ="text"] {
+input[type="text"] {
   width: 100%;
   font-style: italic;
   padding: 20px 0;
@@ -34,19 +34,13 @@ input[type ="text"] {
 .tasks {
   color: rgb(0, 0, 0);
   text-align: left;
-  /* border: 2px solid gold; */
 }
 
 .task-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border: 2px solid green; */
 }
-
-/* .task-items {
-  
-} */
 
 .btn {
   width: 100%;
