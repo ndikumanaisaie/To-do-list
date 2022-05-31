@@ -22,7 +22,7 @@
     "dev": "webpack --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --open",
-    "build": "webpack"
+    "build": "webpack --config webpack.config.js"
   },
   "name": "to-do-list",
   "description": "\"To-do list\" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.",

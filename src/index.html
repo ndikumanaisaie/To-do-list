@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wbpack Exercise</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
 </head>
 <body>
-    <h1>Hello webpack!</h1>
+    <main class="main">
+        <div class="tasks" id="tasks">
+            <p class="head list"><span>Today's To do</span><i class="fa-solid fa-arrows-rotate"></i></p>
+            <div class="grey-rule"></div>
+            <div class="item-to-add list">
+                <label for="item-to-add"></label>
+                <input type="text" class="add-item" id="item-to-add" placeholder="Add to your list" />
+            </div>
+        </div>
+        <button class="btn" value="clear">Clear all completed</button>
+    </main>
+    
 </body>
 </html>

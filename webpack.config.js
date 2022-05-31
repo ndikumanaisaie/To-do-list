@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].js',
-    path: `${__dirname}/build`,
+    path: `${__dirname}/dist`,
     chunkFilename: '[id].[chunkhash].js',
   },
   module: {
