@@ -1,13 +1,13 @@
-const path = require('path');
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+// const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
-  output:{
+  output: {
     filename: '[name].js',
-    path: __dirname + '/build',
-    chunkFilename: '[id].[chunkhash].js'
+    path: `${__dirname}/build`,
+    chunkFilename: '[id].[chunkhash].js',
   },
   module: {
     rules: [
@@ -23,7 +23,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-    })
+    }),
   ],
   optimization: {
     runtimeChunk: 'single',
