@@ -5,6 +5,7 @@ import addDataTolist from './addDataTolist.js';
 export const data = JSON.parse(localStorage.getItem('data')) || [];
 const addItem = document.getElementById('add-item');
 const listItems = document.querySelector('.listItems');
+const clearCompl = document.querySelector('.clearCompleted');
 
 export function displayList(data) {
   if (data !== null) {
@@ -26,8 +27,8 @@ export function displayList(data) {
   const completedTask = (e) => {
     const data = localStorage.getItem('data');
     const dataArray = JSON.parse(data);
-    const todoObject = dataArray.find((x) => x.index === Number(e.target.parentElement.id));
-    const index = dataArray.indexOf(todoObject);
+    const listObject = dataArray.find((x) => x.index === Number(e.target.parentElement.id));
+    const index = dataArray.indexOf(listObject);
     if (!dataArray[index].completed) {
       dataArray[index].completed = 1;
       e.target.parentElement.children[1].classList.add('checked');
@@ -62,12 +63,24 @@ export function displayList(data) {
     });
   });
 
-  // const taskItem = document.querySelectorAll('.task-item');
-  // taskItem.forEach((task) => {
-  //   task.addEventListener('click', () => {
-  //     task.style.background = '#fdf000';
-  //   });
-  // });
+  const editList = (e) => {
+    const data = localStorage.getItem('data');
+    const listArray = JSON.parse(data);
+    const listObject = listArray.find((x) => x.index === Number(e.target.parentElement.id));
+    const index = listArray.indexOf(listObject);
+    listArray[index].description = e.target.textContent;
+    localStorage.setItem('data', JSON.stringify(listArray));
+  };
+
+  const editButtons = document.querySelectorAll('.description');
+  editButtons.forEach((btn) => {
+    btn.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        editList(e);
+      }
+    });
+  });
 }
 
 export function add() {
@@ -79,3 +92,28 @@ export function add() {
     }
   });
 }
+
+const clearCompleted = () => {
+  let data = JSON.parse(localStorage.getItem('data'));
+  data = data.filter((elem) => elem.completed !== 1);
+  for (let i = 0; i < data.length; i += 1) {
+    data[i].index = i + 1;
+  }
+  displayList(data);
+  localStorage.setItem('data', JSON.stringify(data));
+};
+
+export function clear() {
+  clearCompl.addEventListener('click', () => {
+    listItems.innerHTML = '';
+    clearCompleted();
+  });
+}
+
+export const windowLoad = () => {
+  window.addEventListener('load', () => {
+    const data = localStorage.getItem('data');
+    const todoArray = JSON.parse(data);
+    displayList(todoArray);
+  });
+};

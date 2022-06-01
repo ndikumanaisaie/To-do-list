@@ -45,7 +45,11 @@ input[type="text"] {
 
 .delete {
   cursor: pointer;
-  display: none;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: rgb(15, 146, 179);
 }
 
 .task-item {
