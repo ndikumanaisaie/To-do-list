@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <title>Webpack</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         rel="stylesheet"
@@ -12,11 +12,15 @@
 <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
     <main class="main">
-        <h1>Hello webpack!</h1>
-        <h3>Today's To do</h3>
         <div class="tasks" id="tasks">
-    
+            <p class="head list"><span>Today's To do</span><i class="fa-solid fa-arrows-rotate"></i></p>
+            <div class="grey-rule"></div>
+            <div class="items-to-add list">
+                <label for="add-item"></label>
+                <input type="text" class="add-item" id="add-item" placeholder="Add to your list" />
+            </div>
         </div>
+        <button class="clearCompleted" value="clear">Clear all completed</button>
     </main>
     
 </body>
