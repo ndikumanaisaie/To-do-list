@@ -38,13 +38,23 @@ input[type="text"] {
   text-align: left;
 }
 
+.box {
+  display: flex;
+  gap: 24px;
+}
+
+.delete {
+  cursor: pointer;
+  display: none;
+}
+
 .task-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.btn {
+.clearCompleted {
   width: 100%;
   padding: 20px 0;
   font-size: 18px;
