@@ -18,6 +18,8 @@ export default () => {
     completed: false,
     description: 'list3',
   });
+  
+  data.sort((a, b) => a.id - b.id);
   const div = document.createElement('div');
   const container = document.querySelector('.tasks');
   div.classList.add('task-items');
