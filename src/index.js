@@ -1,5 +1,7 @@
 // import _ from 'lodash';
 import './style.css';
-import task from './task.js';
+import { add, clear, windowLoad } from './task.js';
 
-task();
+add();
+clear();
+windowLoad();
