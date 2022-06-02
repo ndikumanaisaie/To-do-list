@@ -7,7 +7,7 @@ import completedTask from './completedTask.js';
 export const data = JSON.parse(localStorage.getItem('data')) || [];
 const addItem = document.getElementById('add-item');
 const listItems = document.querySelector('.listItems');
-const clearCompl = document.querySelector('.clearCompleted');
+const clearBtn = document.querySelector('.clearCompleted');
 
 export function displayList(data) {
   if (data !== null) {
@@ -31,7 +31,6 @@ export function displayList(data) {
   }
 
   data.forEach((d) => {
-    const taskItems = document.getElementById(`cont-${d.index}`);
     const taskItem = document.getElementById(`div-${d.index}`);
     const trashIcon = document.getElementById(`del-${d.index}`);
     const ellipsis = document.getElementById(`el-${d.index}`);
@@ -40,7 +39,6 @@ export function displayList(data) {
       ellipsis.classList.add('d-none');
       trashIcon.classList.remove('d-none');
       trashIcon.classList.add('d-block');
-      // taskItems.classList.toggle('itemSelected');
     });
 
     taskItem.addEventListener('focusout', () => {
@@ -48,28 +46,9 @@ export function displayList(data) {
         ellipsis.classList.add('d-block');
         ellipsis.classList.remove('d-none');
         trashIcon.classList.add('d-none');
-        // taskItems.classList.toggle('listSelected');
       }, 100);
     });
   });
-
-  //   console.log(taskItems[i]);
-
-  // const completedTask = (e) => {
-  //   const data = localStorage.getItem('data');
-  //   const dataArray = JSON.parse(data);
-  //   const listObject = dataArray.find((x) => x.index === Number(e.target.parentElement.id));
-  //   const index = dataArray.indexOf(listObject);
-  //   if (!dataArray[index].completed) {
-  //     dataArray[index].completed = 1;
-  //     e.target.parentElement.children[1].classList.add('checked');
-  //     localStorage.setItem('data', JSON.stringify(dataArray));
-  //   } else {
-  //     dataArray[index].completed = 0;
-  //     e.target.parentElement.children[1].classList.remove('checked');
-  //     localStorage.setItem('data', JSON.stringify(dataArray));
-  //   }
-  // };
   const checkBox = document.querySelectorAll('.checkBox');
   checkBox.forEach((btn) => {
     btn.addEventListener('change', (e) => {
@@ -124,7 +103,7 @@ export function add() {
   });
 }
 
-const clearCompleted = () => {
+const clearCompletedTask = () => {
   let data = JSON.parse(localStorage.getItem('data'));
   data = data.filter((elem) => elem.completed !== 1);
   for (let i = 0; i < data.length; i += 1) {
@@ -135,9 +114,9 @@ const clearCompleted = () => {
 };
 
 export function clear() {
-  clearCompl.addEventListener('click', () => {
+  clearBtn.addEventListener('click', () => {
     listItems.innerHTML = '';
-    clearCompleted();
+    clearCompletedTask();
   });
 }
 
