@@ -43,8 +43,21 @@ input[type="text"] {
   gap: 24px;
 }
 
+.ellipsis,
 .delete {
   cursor: pointer;
+}
+
+/* .delete {
+  display: none;
+} */
+
+/* .d-none {
+  display: none;
+} */
+
+.itemSelected {
+  background-color: rgba(255, 249, 164, 0.884);
 }
 
 .checked {
@@ -52,10 +65,17 @@ input[type="text"] {
   color: rgb(15, 146, 179);
 }
 
+.task-items {
+  border: 2px solid brown;
+  padding: 12px;
+}
+
 .task-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  /* border: 2px solid gold; */
 }
 
 .clearCompleted {
