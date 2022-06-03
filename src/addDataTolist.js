@@ -5,7 +5,7 @@ import { displayList } from './task.js';
 export default (data, desc) => {
   data.push({
     description: desc,
-    completed: 0,
+    completed: false,
     index: data.length + 1,
   });
   displayList(data);
