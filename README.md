@@ -45,4 +45,4 @@ This project is [MIT](./MIT.md) licensed.
 - Awesome Books: [Awesome Books](https://ndikumanaisaie.github.io/awesome-books/)
 
 ## Link to URL on gitHub
-- Awesome Books: [Awesome Books](https://ndikumanaisaie.github.io/awesome-books/)
+- [Awesome Books](https://github.com/ndikumanaisaie/To-do-list/)
