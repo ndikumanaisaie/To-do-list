@@ -42,7 +42,7 @@ Give a ⭐️ if you like this project!
 This project is [MIT](./MIT.md) licensed.
 
 ## Link to URL on browser
-- Awesome Books: [Awesome Books](https://ndikumanaisaie.github.io/awesome-books/)
+- [To-do-list](https://ndikumanaisaie.github.io/To-do-list/)
 
 ## Link to URL on gitHub
-- [Awesome Books](https://github.com/ndikumanaisaie/To-do-list/)
+- [To-do-list](https://github.com/ndikumanaisaie/To-do-list/)
