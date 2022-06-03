@@ -3,7 +3,7 @@
 ## To do list
 
 > "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
-> ![ScreenShot](https://raw.github.com/{ndikumanaisaie}/{To-do-list}/{main}/{'./images/todolist-screenshot.png'})
+> ![To-do List](https://github.com/ndikumanaisaie/To-do-list/main/images/shot.png?raw=true)
 
 ## Built With
 
