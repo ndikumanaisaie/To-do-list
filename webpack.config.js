@@ -6,7 +6,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: '[name].js',
-    path: `${__dirname}/dist`,
+    path: `${__dirname}/docs`,
     chunkFilename: '[id].[chunkhash].js',
   },
   module: {
@@ -18,7 +18,7 @@ module.exports = {
     ],
   },
   devServer: {
-    static: './dist',
+    static: './docs',
   },
   plugins: [
     new HtmlWebpackPlugin({
