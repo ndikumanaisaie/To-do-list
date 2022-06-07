@@ -5,7 +5,7 @@ import addDataTolist from './addDataTolist.js';
 import completedTask from './completedTask.js';
 
 export const data = JSON.parse(localStorage.getItem('data')) || [];
-const addItem = document.getElementById('add-item');
+const addItem = document.querySelector('.add-item');
 const listItems = document.querySelector('.listItems');
 const clearBtn = document.querySelector('.clearCompleted');
 
