@@ -23,7 +23,7 @@
 - LinkedIn: [ndikumana-isaie-21166273](https://www.linkedin.com/in/ndikumana-isaie-21166273/)
 
 ## Link to URL on browser
-- [To-do-list](https://ndikumanaisaie.github.io/To-do-list/)
+- [To-do-list](https://ndikumanaisaie.github.io/To-do-list/dist/)
 
 ## Link to URL on gitHub
 - [To-do-list](https://github.com/ndikumanaisaie/To-do-list/)
