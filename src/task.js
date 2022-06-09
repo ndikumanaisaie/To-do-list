@@ -1,6 +1,8 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/no-mutable-exports */
 // eslint-disable-next-line import/no-cycle
 import addDataTolist from './addDataTolist.js';
+import deleteItem from './deleteItem.js';
 
 export const data = JSON.parse(localStorage.getItem('data')) || [];
 const addItem = document.getElementById('add-item');
@@ -30,11 +32,11 @@ export function displayList(data) {
     const listObject = dataArray.find((x) => x.index === Number(e.target.parentElement.id));
     const index = dataArray.indexOf(listObject);
     if (!dataArray[index].completed) {
-      dataArray[index].completed = 1;
+      dataArray[index].completed = true;
       e.target.parentElement.children[1].classList.add('checked');
       localStorage.setItem('data', JSON.stringify(dataArray));
     } else {
-      dataArray[index].completed = 0;
+      dataArray[index].completed = false;
       e.target.parentElement.children[1].classList.remove('checked');
       localStorage.setItem('data', JSON.stringify(dataArray));
     }
@@ -46,14 +48,14 @@ export function displayList(data) {
     });
   });
 
-  const deleteItem = (e) => {
-    data = data.filter((x) => x.index !== Number(e.target.parentElement.id - 1));
-    for (let i = 0; i < data.length; i += 1) {
-      data[i].index = i + 1;
-    }
-    displayList(data);
-    localStorage.setItem('data', JSON.stringify(data));
-  };
+  // const deleteItem = (e) => {
+  //   data = data.filter((x) => x.index !== Number(e.target.parentElement.id - 1));
+  //   for (let i = 0; i < data.length; i += 1) {
+  //     data[i].index = i + 1;
+  //   }
+  //   displayList(data);
+  //   localStorage.setItem('data', JSON.stringify(data));
+  // };
 
   const deleteButtons = document.querySelectorAll('.delete');
   deleteButtons.forEach((btn) => {
@@ -95,7 +97,7 @@ export function add() {
 
 const clearCompleted = () => {
   let data = JSON.parse(localStorage.getItem('data'));
-  data = data.filter((elem) => elem.completed !== 1);
+  data = data.filter((elem) => elem.completed !== true);
   for (let i = 0; i < data.length; i += 1) {
     data[i].index = i + 1;
   }
