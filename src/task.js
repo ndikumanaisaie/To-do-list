@@ -30,7 +30,6 @@ export function displayList(data) {
     });
   }
 
-
   const completedTask = (e) => {
     const data = localStorage.getItem('data');
     const dataArray = JSON.parse(data);
@@ -46,7 +45,7 @@ export function displayList(data) {
       localStorage.setItem('data', JSON.stringify(dataArray));
     }
   };
-  
+
   const checkBox = document.querySelectorAll('.checkBox');
   checkBox.forEach((btn) => {
     btn.addEventListener('change', (e) => {
