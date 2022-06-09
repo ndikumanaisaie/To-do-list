@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(207, 207, 207);
 }
 
 .main {
@@ -17,6 +17,7 @@ body {
   box-shadow: 2px 6px 12px rgb(136, 136, 136);
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
+  width: 50%;
 }
 
 .head {
@@ -28,7 +29,7 @@ body {
 input[type="text"] {
   width: 100%;
   font-style: italic;
-  padding: 20px 0;
+  padding: 2px 0;
   font-size: 18px;
   outline: none;
   border: none;
@@ -45,6 +46,7 @@ input[type="text"] {
   gap: 24px;
 }
 
+.ellipsis,
 .delete {
   cursor: pointer;
 }
@@ -54,15 +56,23 @@ input[type="text"] {
   color: rgb(15, 146, 179);
 }
 
+.task-items {
+  padding: 4px;
+}
+
 .task-item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
+.listItems {
+  margin-top: -16px;
+}
+
 .clearCompleted {
   width: 100%;
-  padding: 20px 0;
+  padding: 12px 0;
   font-size: 18px;
   background-color: rgb(239, 239, 239);
   border: 0 solid grey;
