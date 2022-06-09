@@ -2,7 +2,7 @@
 /* eslint-disable import/no-mutable-exports */
 // eslint-disable-next-line import/no-cycle
 import addDataTolist from './addDataTolist.js';
-import deleteItem from './deleteItem.js';
+// import deleteItem from './deleteItem.js';
 
 export const data = JSON.parse(localStorage.getItem('data')) || [];
 const addItem = document.getElementById('add-item');
@@ -48,14 +48,14 @@ export function displayList(data) {
     });
   });
 
-  // const deleteItem = (e) => {
-  //   data = data.filter((x) => x.index !== Number(e.target.parentElement.id - 1));
-  //   for (let i = 0; i < data.length; i += 1) {
-  //     data[i].index = i + 1;
-  //   }
-  //   displayList(data);
-  //   localStorage.setItem('data', JSON.stringify(data));
-  // };
+  const deleteItem = (e) => {
+    data = data.filter((x) => x.index !== Number(e.target.parentElement.id - 1));
+    for (let i = 0; i < data.length; i += 1) {
+      data[i].index = i + 1;
+    }
+    displayList(data);
+    localStorage.setItem('data', JSON.stringify(data));
+  };
 
   const deleteButtons = document.querySelectorAll('.delete');
   deleteButtons.forEach((btn) => {
