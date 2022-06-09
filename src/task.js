@@ -5,26 +5,31 @@ import addDataTolist from './addDataTolist.js';
 // import deleteItem from './deleteItem.js';
 
 export const data = JSON.parse(localStorage.getItem('data')) || [];
-const addItem = document.getElementById('add-item');
+const addItem = document.querySelector('.add-item');
 const listItems = document.querySelector('.listItems');
-const clearCompl = document.querySelector('.clearCompleted');
+const clearBtn = document.querySelector('.clearCompleted');
 
 export function displayList(data) {
   if (data !== null) {
     data.forEach((d) => {
       const div = document.createElement('div');
       div.classList.add('task-items');
+      div.setAttribute('id', `cont-${d.index}`);
 
       let content = '';
-      content += `<div class="task-item list" id="${d.index + 1}"><div class="box" id="${d.index}">
+      content += `<div class="task-item list" id="div-${d.index}"><div class="box" id="${d.index}">
       <input type="checkbox" id="task-item" name="task" value="task"  ${d.completed ? 'checked' : ''} class="checkBox">
       <div class="description ${d.completed ? 'checked' : ''}" contenteditable="${!d.completed}"> ${d.description}</div>
-      </div><i class="fas fa-trash delete"></i></div>
+      </div>
+      <i class="fas fa-trash delete d-none" id="del-${d.index}"></i>
+      <i class="fas fa-ellipsis-v ellipsis" id="el-${d.index}"></i>
+      </div>
       <div class="grey-rule"></div>`;
       div.innerHTML = content;
       listItems.appendChild(div);
     });
   }
+
 
   const completedTask = (e) => {
     const data = localStorage.getItem('data');
@@ -41,6 +46,7 @@ export function displayList(data) {
       localStorage.setItem('data', JSON.stringify(dataArray));
     }
   };
+  
   const checkBox = document.querySelectorAll('.checkBox');
   checkBox.forEach((btn) => {
     btn.addEventListener('change', (e) => {
@@ -62,6 +68,27 @@ export function displayList(data) {
     btn.addEventListener('click', (e) => {
       listItems.innerHTML = '';
       deleteItem(e);
+    });
+  });
+
+  data.forEach((d) => {
+    const taskItem = document.getElementById(`div-${d.index}`);
+    const trashIcon = document.getElementById(`del-${d.index}`);
+    const ellipsis = document.getElementById(`el-${d.index}`);
+
+    taskItem.addEventListener('focusin', (e) => {
+      e.preventDefault();
+      ellipsis.classList.add('d-none');
+      trashIcon.classList.remove('d-none');
+      trashIcon.classList.add('d-block');
+    });
+
+    taskItem.addEventListener('focusout', () => {
+      setTimeout(() => {
+        ellipsis.classList.add('d-block');
+        ellipsis.classList.remove('d-none');
+        trashIcon.classList.add('d-none');
+      }, 100);
     });
   });
 
@@ -95,7 +122,7 @@ export function add() {
   });
 }
 
-const clearCompleted = () => {
+const clearCompletedTask = () => {
   let data = JSON.parse(localStorage.getItem('data'));
   data = data.filter((elem) => elem.completed !== true);
   for (let i = 0; i < data.length; i += 1) {
@@ -106,9 +133,9 @@ const clearCompleted = () => {
 };
 
 export function clear() {
-  clearCompl.addEventListener('click', () => {
+  clearBtn.addEventListener('click', () => {
     listItems.innerHTML = '';
-    clearCompleted();
+    clearCompletedTask();
   });
 }
 
