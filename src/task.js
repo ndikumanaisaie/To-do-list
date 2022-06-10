@@ -1,8 +1,8 @@
-/* eslint-disable no-undef */
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/no-mutable-exports */
 // eslint-disable-next-line import/no-cycle
 import addDataTolist from './addDataTolist.js';
-import completedTask from './completedTask.js';
+// import deleteItem from './deleteItem.js';
 
 export const data = JSON.parse(localStorage.getItem('data')) || [];
 const addItem = document.querySelector('.add-item');
@@ -29,6 +29,22 @@ export function displayList(data) {
       listItems.appendChild(div);
     });
   }
+
+  const completedTask = (e) => {
+    const data = localStorage.getItem('data');
+    const dataArray = JSON.parse(data);
+    const listObject = dataArray.find((x) => x.index === Number(e.target.parentElement.id));
+    const index = dataArray.indexOf(listObject);
+    if (!dataArray[index].completed) {
+      dataArray[index].completed = true;
+      e.target.parentElement.children[1].classList.add('checked');
+      localStorage.setItem('data', JSON.stringify(dataArray));
+    } else {
+      dataArray[index].completed = false;
+      e.target.parentElement.children[1].classList.remove('checked');
+      localStorage.setItem('data', JSON.stringify(dataArray));
+    }
+  };
 
   const checkBox = document.querySelectorAll('.checkBox');
   checkBox.forEach((btn) => {

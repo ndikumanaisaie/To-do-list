@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@babel/core": "^7.18.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
     "@babel/preset-react": "^7.17.12",
     "babel-eslint": "^10.1.0",
@@ -10,6 +11,9 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.26.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "jest-localstorage-mock": "^2.4.21",
     "sass": "^1.52.1",
     "sass-loader": "^13.0.0",
     "style-loader": "^3.3.1",
@@ -28,9 +32,16 @@
   },
   "scripts": {
     "dev": "webpack --mode development",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "start": "webpack serve --open",
     "build": "webpack --config webpack.config.js"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "resetMocks": false,
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   },
   "name": "to-do-list",
   "description": "\"To-do list\" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.",
