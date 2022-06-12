@@ -1,4 +1,7 @@
-/* eslint-disable */
+/* stylelint-disable selector-type-no-unknown */
+
+/* stylelint-disable */
+
 .pln { color: #000; }
 
 @media screen {

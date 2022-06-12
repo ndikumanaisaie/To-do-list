@@ -22,6 +22,12 @@
 - Twitter: [Ndikuma38670724](https://twitter.com/Ndikuma38670724)
 - LinkedIn: [ndikumana-isaie-21166273](https://www.linkedin.com/in/ndikumana-isaie-21166273/)
 
+👤 **Toma John Musa**
+
+- GitHub: [@Kamba56](https://github.com/Kamba56)
+- Twitter: [@Kamba_TJ](https://twitter.com/Kamba_TJ)
+- LinkedIn: [@Kamba56](https://www.linkedin.com/in/kamba56/)
+
 ## Link to URL on browser
 - [To-do-list](https://ndikumanaisaie.github.io/To-do-list/dist/)
 
@@ -50,7 +56,7 @@ Use the command `npm test` as it is show on screenshot.png
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/ndikumanaisaie/To-do-list/issues).
 
 ## Show your support
 
